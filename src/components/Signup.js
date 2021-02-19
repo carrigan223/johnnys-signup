@@ -32,8 +32,10 @@ const StyledButton = styled("button")`
 const StyledInputContainer = styled("div")`
   display: flex;
   padding: 1rem 0rem;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serid;
   font-size: 1.25rem;
+  color: blue;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
 `;
 
 const ButtonContainer = styled("div")`
@@ -45,11 +47,13 @@ const StyleInput = styled("input")`
   flex: 1;
   width: 20rem;
   border-radius: 4px;
+  font-size: 1.25rem;
   border: none;
-  font-family: "Fredoka One";
-  box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.7);
-    
-
+  font-family: monospace;
+  box-shadow: 0px 3px 5px rgba(0, 0, 255, 0.7);
+  :hover {
+    box-shadow: 0px 3px 5px rgba(0, 100, 0, 0.7);
+  }
 `;
 //////
 
