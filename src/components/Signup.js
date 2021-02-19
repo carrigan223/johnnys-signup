@@ -1,5 +1,57 @@
 import { useState, useEffect } from "react";
 import React from "react";
+import styled from "styled-components";
+
+//styles///
+
+const StyledButton = styled("button")`
+  width: 140px;
+  height: 45px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 128, 128, 0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 1rem;
+  :hover {
+    background-color: green;
+    box-shadow: 0px 15px 20px rgba(0, 215, 0, 0.4);
+    color: black;
+    transform: translateY(-7px);
+  }
+`;
+
+const StyledInputContainer = styled("div")`
+  display: flex;
+  padding: 1rem 0rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 1.25rem;
+`;
+
+const ButtonContainer = styled("div")`
+  display: flex;
+  justify-content: center;
+`;
+
+const StyleInput = styled("input")`
+  flex: 1;
+  width: 20rem;
+  border-radius: 4px;
+  border: none;
+  font-family: "Fredoka One";
+  box-shadow: 0px 8px 15px rgba(0, 0, 255, 0.7);
+    
+
+`;
+//////
 
 const Signup = () => {
   const [loading, setLoading] = useState("");
@@ -53,10 +105,9 @@ const Signup = () => {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
-      <div style={{ display: "flex", padding: "1rem 0rem" }}>
+      <StyledInputContainer>
         <label style={{ flex: 1 }}>Name</label>
-        <input
-          style={{ flex: 1 }}
+        <StyleInput
           type="text"
           name="name"
           // onChange={(e) => setInput(e.target.value)}
@@ -65,11 +116,10 @@ const Signup = () => {
           required
         />
         <br />
-      </div>
-      <div style={{ display: "flex", padding: "1rem 0rem" }}>
-        <label style={{ flex: 1,  }}>Username</label>
-        <input
-          style={{ flex: 1, marginLeft: "1rem" }}
+      </StyledInputContainer>
+      <StyledInputContainer>
+        <label style={{ flex: 1 }}>Username</label>
+        <StyleInput
           type="text"
           name="username"
           // onChange={(e) => setInput(e.target.value)}
@@ -78,11 +128,10 @@ const Signup = () => {
           required
         />
         <br />
-      </div>
-      <div style={{ display: "flex", padding: "1rem 0rem" }}>
+      </StyledInputContainer>
+      <StyledInputContainer>
         <label style={{ flex: 1 }}>Email</label>
-        <input
-          style={{ flex: 1 }}
+        <StyleInput
           type="email"
           name="email"
           // onChange={(e) => setInput(e.target.value)}
@@ -90,34 +139,20 @@ const Signup = () => {
           value={input.email}
           required
         />
-      </div>
-      <div style={{ display: "flex", padding: "1rem 0rem" }}>
+      </StyledInputContainer>
+      <StyledInputContainer>
         <label style={{ flex: 1 }}>Password</label>
-        <input
-          style={{ flex: 1 }}
+        <StyleInput
           type="password"
           name="password"
           // onChange={(e) => setInput(e.target.value)}
           onChange={(e) => handleInputChange(e)}
           value={input.password}
         />
-      </div>
-      <div style={{ display: "flex", justifyContent: "center"}}>
-        <button
-          style={{
-            height: "1.5rem",
-            width: "5.5rem",
-
-            backgroundColor: "black",
-            color: "orange",
-            border: "none",
-            borderRadius: "8%",
-          }}
-          type="submit"
-        >
-          Sign Up
-        </button>
-      </div>
+      </StyledInputContainer>
+      <ButtonContainer>
+        <StyledButton type="submit">Sign Up</StyledButton>
+      </ButtonContainer>
     </form>
   );
 };
